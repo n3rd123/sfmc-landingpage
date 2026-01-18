@@ -19,11 +19,21 @@
     ];
 
     // FAQ-Datenbank
-    const faq = [
-        { q: "Wie schnell ist die Hilfe verfügbar?", a: "In der Regel kann ich operative Engpässe innerhalb weniger Tage unterstützen." },
-        { q: "Wird direkt im System gearbeitet?", a: "Ja, ich arbeite direkt in Ihrer Salesforce Instanz für schnellstmögliche Ergebnisse." },
-        { q: "Gibt es Support für SQL & AMPscript?", a: "Absolut. Komplexe Abfragen und dynamische Inhalte gehören zum Standardpaket." }
+    const faq = [    
+        { 
+            q: "Wie läuft die operative Zusammenarbeit ab?", 
+            a: "Wir arbeiten voll integriert in Ihren Prozessen. Die Kommunikation erfolgt direkt über Slack oder Teams, sodass wir Engpässe sofort auflösen können." 
+        },
+        { 
+            q: "Unser SFMC liegt länger rum und wir wollen sie wieder live schicken?", 
+            a: "Ich analysiere den aktuellen Status Quo Ihrer Instanz und reaktiviere die Synchronisation sowie die wichtigsten Journeys, damit Ihr System schnell wieder produktiv geht." 
+        },
+        { 
+            q: "Unser Budget ist knapp, aber wir würden gerne die Marketing Cloud implementieren?", 
+            a: "Kein Problem. Ich arbeite mit einem spezialisierten, deutschsprachigen Nearshore-Team zusammen. So erhalten Sie Experten-Qualität zu Konditionen, die auch bei knappem Budget funktionieren." 
+        }
     ];
+    
 
     let openIndex = $state(null);
 
