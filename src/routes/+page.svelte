@@ -207,7 +207,7 @@
         background: #111;
     }
 
-    /* FAQ Styles Korrektur */
+/* FAQ Styles Korrektur */
     .faq-section {
         width: 100%;
         display: block;
@@ -236,11 +236,15 @@
         justify-content: space-between;
         align-items: center;
         transition: color 0.2s ease;
+        outline: none; /* Entfernt den Standard-Rahmen des Browsers */
     }
 
-    /* Blau statt Orange beim Hover */
-    .faq-question:hover { 
-        color: #00a1e0; 
+    /* Blau beim Drüberfahren UND beim Anklicken/Fokus */
+    .faq-question:hover, 
+    .faq-question:focus,
+    .faq-question:active { 
+        color: #00a1e0 !important; 
+        outline: none;
     }
 
     .faq-answer { 
