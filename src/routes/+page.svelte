@@ -1,7 +1,4 @@
 <script>
-    // Pfad zu deinem Bild im /public Ordner
-    let heroImage = "/hero.jpg";
-    
     // Leistungen
     const services = [
         { 
@@ -18,7 +15,7 @@
         }
     ];
 
-    // FAQ-Datenbank
+    // FAQ-Datenbank - Korrekt angepasst auf unser Gespräch
     const faq = [    
         { 
             q: "Wie läuft die operative Zusammenarbeit ab?", 
@@ -33,7 +30,6 @@
             a: "Kein Problem. Ich arbeite mit einem spezialisierten, deutschsprachigen Nearshore-Team zusammen. So erhalten Sie Experten-Qualität zu Konditionen, die auch bei knappem Budget funktionieren." 
         }
     ];
-    
 
     let openIndex = $state(null);
 
@@ -171,6 +167,8 @@
         margin-bottom: 2rem;
         font-weight: 600;
         color: #ffffff;
+        display: block;
+        width: 100%;
     }
 
     h3 {
@@ -209,9 +207,21 @@
         background: #111;
     }
 
-    /* FAQ Styles */
-    .faq-container { border-top: 1px solid #222; }
-    .faq-item { border-bottom: 1px solid #222; }
+    /* FAQ Styles Korrektur */
+    .faq-section {
+        width: 100%;
+        display: block;
+    }
+
+    .faq-container { 
+        border-top: 1px solid #222; 
+        width: 100%;
+    }
+
+    .faq-item { 
+        border-bottom: 1px solid #222; 
+    }
+
     .faq-question {
         width: 100%;
         background: none;
@@ -225,10 +235,24 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: color 0.2s ease;
     }
-    .faq-question:hover { color: #00a1e0; }
-    .faq-answer { padding-bottom: 1.5rem; color: #aaaaaa; }
-    .icon { color: #00a1e0; font-size: 1.5rem; }
+
+    /* Blau statt Orange beim Hover */
+    .faq-question:hover { 
+        color: #00a1e0; 
+    }
+
+    .faq-answer { 
+        padding-bottom: 1.5rem; 
+        color: #aaaaaa; 
+        line-height: 1.6;
+    }
+
+    .icon { 
+        color: #00a1e0; 
+        font-size: 1.5rem; 
+    }
 
     ul { list-style: none; padding: 0; }
     .check-list li, .bullet-list li {
@@ -237,26 +261,90 @@
         display: flex;
         align-items: flex-start;
     }
-    .check-list li::before { content: "✓"; color: #ff6600; margin-right: 14px; font-weight: bold; }
-    .bullet-list li::before { content: "•"; color: #00a1e0; margin-right: 14px; font-weight: bold; font-size: 1.5rem; line-height: 1; }
+
+    .check-list li::before { 
+        content: "✓"; 
+        color: #ff6600; 
+        margin-right: 14px; 
+        font-weight: bold; 
+    }
+
+    .bullet-list li::before { 
+        content: "•"; 
+        color: #00a1e0; 
+        margin-right: 14px; 
+        font-weight: bold; 
+        font-size: 1.5rem; 
+        line-height: 1; 
+    }
 
     /* Form Styles */
-    .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
-    label { font-size: 0.75rem; color: #666666; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: 600; }
+    .form-group { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 0.5rem; 
+        margin-bottom: 1.2rem; 
+    }
+
+    label { 
+        font-size: 0.75rem; 
+        color: #666666; 
+        text-transform: uppercase; 
+        letter-spacing: 0.1rem; 
+        font-weight: 600; 
+    }
+
     input, textarea {
-        background: #111111; border: 1px solid #333333; color: #ffffff;
-        padding: 1rem; border-radius: 4px; font-size: 1rem;
+        background: #111111; 
+        border: 1px solid #333333; 
+        color: #ffffff;
+        padding: 1rem; 
+        border-radius: 4px; 
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
-    input:focus, textarea:focus { border-color: #00a1e0; outline: none; }
-    .consent { font-size: 0.9rem; color: #888888; display: flex; gap: 0.8rem; margin: 1.5rem 0 2rem 0; cursor: pointer; }
+
+    input:focus, textarea:focus { 
+        border-color: #00a1e0; 
+        outline: none; 
+    }
+
+    .consent { 
+        font-size: 0.9rem; 
+        color: #888888; 
+        display: flex; 
+        gap: 0.8rem; 
+        margin: 1.5rem 0 2rem 0; 
+        cursor: pointer; 
+        align-items: flex-start;
+    }
+
+    .consent input {
+        width: auto;
+        margin-top: 5px;
+    }
+
     button {
-        background: #ff6600; color: #ffffff; border: none; padding: 1.2rem 2.5rem;
-        font-weight: 700; cursor: pointer; border-radius: 4px; font-size: 1.1rem;
+        background: #ff6600; 
+        color: #ffffff; 
+        border: none; 
+        padding: 1.2rem 2.5rem;
+        font-weight: 700; 
+        cursor: pointer; 
+        border-radius: 4px; 
+        font-size: 1.1rem;
+        transition: background 0.2s ease;
     }
-    button:hover { background: #e65c00; transform: translateY(-1px); }
+
+    button:hover { 
+        background: #e65c00; 
+        transform: translateY(-1px); 
+    }
 
     @media (max-width: 600px) {
-        main { padding: 2rem 1rem; }
+        main { padding: 2rem 1.5rem; }
         section { margin-bottom: 4rem; }
+        h1 { font-size: 2rem; }
     }
 </style>
