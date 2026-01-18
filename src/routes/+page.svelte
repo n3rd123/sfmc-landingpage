@@ -15,19 +15,19 @@
         }
     ];
 
-    // FAQ-Daten
+   // Überarbeitete FAQ-Daten
     const faqData = [    
         { 
-            q: "Wie läuft die operative Zusammenarbeit ab?", 
-            a: "Wir arbeiten voll integriert in Ihren Prozessen. Die Kommunikation erfolgt direkt über Slack oder Teams, sodass wir Engpässe sofort auflösen können." 
+            q: "Wie schnell können wir mit der operativen Unterstützung starten?", 
+            a: "Nach einem kurzen Erstgespräch zur Klärung der Zugriffsrechte können wir meist innerhalb von 48 Stunden mit den ersten Tasks in Ihrer Marketing Cloud starten. Die Kommunikation erfolgt unkompliziert via Slack oder Teams." 
         },
         { 
-            q: "Unser SFMC liegt länger rum und wir wollen sie wieder live schicken?", 
-            a: "Ich analysiere den aktuellen Status Quo Ihrer Instanz und reaktiviere die Synchronisation sowie die wichtigsten Journeys, damit Ihr System schnell wieder produktiv geht." 
+            q: "Können auch bestehende, fehlerhafte Journeys repariert werden?", 
+            a: "Ja. Ich führe einen kurzen Check der Datenquellen und Filterkriterien durch, identifiziere die Fehlerquelle und stabilisiere Ihre Journeys, ohne den laufenden Betrieb zu unterbrechen." 
         },
         { 
-            q: "Unser Budget ist knapp, aber wir würden gerne die Marketing Cloud implementieren?", 
-            a: "Kein Problem. Ich arbeite mit einem spezialisierten, deutschsprachigen Nearshore-Team zusammen. So erhalten Sie Experten-Qualität zu Konditionen, die auch bei knappem Budget funktionieren." 
+            q: "Bieten Sie auch Unterstützung bei knappen Budgets an?", 
+            a: "Ja. Durch die Zusammenarbeit mit einem spezialisierten, deutschsprachigen Nearshore-Team kann ich hochwertige SFMC-Expertise zu Konditionen anbieten, die auch für kleinere Budgets oder Pilotprojekte skalierbar sind." 
         }
     ];
 
