@@ -15,7 +15,7 @@
         }
     ];
 
-    // FAQ-Datenbank - Korrekt angepasst auf unser Gespräch
+    // FAQ-Datenbank
     const faq = [    
         { 
             q: "Wie läuft die operative Zusammenarbeit ab?", 
@@ -90,7 +90,7 @@
         <div class="faq-container">
             {#each faq as item, i}
                 <div class="faq-item">
-                    <button onclick={() => toggle(i)} class="faq-question" class:active={openIndex === i}>
+                    <button onclick={() => toggle(i)} class="faq-question">
                         {item.q}
                         <span class="icon">{openIndex === i ? '−' : '+'}</span>
                     </button>
@@ -207,20 +207,12 @@
         background: #111;
     }
 
-/* FAQ Styles Korrektur */
-    .faq-section {
-        width: 100%;
-        display: block;
-    }
+    /* FAQ Styles - FIX: Kein Orange beim Hover/Klick */
+    .faq-section { width: 100%; display: block; }
 
-    .faq-container { 
-        border-top: 1px solid #222; 
-        width: 100%;
-    }
+    .faq-container { border-top: 1px solid #222; width: 100%; }
 
-    .faq-item { 
-        border-bottom: 1px solid #222; 
-    }
+    .faq-item { border-bottom: 1px solid #222; }
 
     .faq-question {
         width: 100%;
@@ -236,28 +228,22 @@
         justify-content: space-between;
         align-items: center;
         transition: color 0.2s ease;
-        outline: none; /* Entfernt den Standard-Rahmen des Browsers */
-    }
-
-    /* Blau beim Drüberfahren UND beim Anklicken/Fokus */
-    .faq-question:hover, 
-    .faq-question:focus,
-    .faq-question:active { 
-        color: #00a1e0 !important; 
         outline: none;
     }
 
-    .faq-answer { 
-        padding-bottom: 1.5rem; 
-        color: #aaaaaa; 
-        line-height: 1.6;
-    }
-
-    .icon { 
+    /* Nur Blau beim Hover, Fokus und Klick */
+    .faq-question:hover, 
+    .faq-question:focus, 
+    .faq-question:active { 
         color: #00a1e0; 
-        font-size: 1.5rem; 
+        outline: none;
     }
 
+    .faq-answer { padding-bottom: 1.5rem; color: #aaaaaa; line-height: 1.6; }
+
+    .icon { color: #00a1e0; font-size: 1.5rem; }
+
+    /* Listen */
     ul { list-style: none; padding: 0; }
     .check-list li, .bullet-list li {
         margin-bottom: 1.2rem;
@@ -266,85 +252,25 @@
         align-items: flex-start;
     }
 
-    .check-list li::before { 
-        content: "✓"; 
-        color: #ff6600; 
-        margin-right: 14px; 
-        font-weight: bold; 
-    }
+    .check-list li::before { content: "✓"; color: #ff6600; margin-right: 14px; font-weight: bold; }
+    .bullet-list li::before { content: "•"; color: #00a1e0; margin-right: 14px; font-weight: bold; font-size: 1.5rem; line-height: 1; }
 
-    .bullet-list li::before { 
-        content: "•"; 
-        color: #00a1e0; 
-        margin-right: 14px; 
-        font-weight: bold; 
-        font-size: 1.5rem; 
-        line-height: 1; 
-    }
-
-    /* Form Styles */
-    .form-group { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 0.5rem; 
-        margin-bottom: 1.2rem; 
-    }
-
-    label { 
-        font-size: 0.75rem; 
-        color: #666666; 
-        text-transform: uppercase; 
-        letter-spacing: 0.1rem; 
-        font-weight: 600; 
-    }
-
+    /* Formular */
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+    label { font-size: 0.75rem; color: #666666; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: 600; }
     input, textarea {
-        background: #111111; 
-        border: 1px solid #333333; 
-        color: #ffffff;
-        padding: 1rem; 
-        border-radius: 4px; 
-        font-size: 1rem;
-        width: 100%;
-        box-sizing: border-box;
+        background: #111111; border: 1px solid #333333; color: #ffffff;
+        padding: 1rem; border-radius: 4px; font-size: 1rem; width: 100%; box-sizing: border-box;
     }
-
-    input:focus, textarea:focus { 
-        border-color: #00a1e0; 
-        outline: none; 
-    }
-
-    .consent { 
-        font-size: 0.9rem; 
-        color: #888888; 
-        display: flex; 
-        gap: 0.8rem; 
-        margin: 1.5rem 0 2rem 0; 
-        cursor: pointer; 
-        align-items: flex-start;
-    }
-
-    .consent input {
-        width: auto;
-        margin-top: 5px;
-    }
+    input:focus, textarea:focus { border-color: #00a1e0; outline: none; }
+    .consent { font-size: 0.9rem; color: #888888; display: flex; gap: 0.8rem; margin: 1.5rem 0 2rem 0; cursor: pointer; align-items: flex-start; }
+    .consent input { width: auto; margin-top: 5px; }
 
     button {
-        background: #ff6600; 
-        color: #ffffff; 
-        border: none; 
-        padding: 1.2rem 2.5rem;
-        font-weight: 700; 
-        cursor: pointer; 
-        border-radius: 4px; 
-        font-size: 1.1rem;
-        transition: background 0.2s ease;
+        background: #ff6600; color: #ffffff; border: none; padding: 1.2rem 2.5rem;
+        font-weight: 700; cursor: pointer; border-radius: 4px; font-size: 1.1rem;
     }
-
-    button:hover { 
-        background: #e65c00; 
-        transform: translateY(-1px); 
-    }
+    button:hover { background: #e65c00; transform: translateY(-1px); }
 
     @media (max-width: 600px) {
         main { padding: 2rem 1.5rem; }
